@@ -90,5 +90,33 @@
 	}
 
 	add_shortcode('button', 'button');
+	
+	add_shortcode( 'tabgroup', 'tab_group' );
+	function tab_group( $atts, $content ){
+	$GLOBALS['tab_count'] = 0;
+	
+	do_shortcode( $content );
+	
+	if( is_array( $GLOBALS['tabs'] ) ){
+	foreach( $GLOBALS['tabs'] as $tab ){
+	$tabs[] = '<li><a class="" href="#">'.$tab['title'].'</a></li>';
+	$panes[] = '<div class="pane"><h3>'.$tab['title'].'</h3>'.$tab['content'].'</div>';
+	}
+	$return = "\n".'<!-- the tabs --><ul class="tabs">'.implode( "\n", $tabs ).'</ul>'."\n".'<!-- tab "panes" --><div class="panes">'.implode( "\n", $panes ).'</div>'."\n";
+	}
+	return $return;
+	}
+	
+	add_shortcode( 'tab', 'tabs' );
+	function tabs( $atts, $content ){
+	extract(shortcode_atts(array(
+	'title' => 'Tab %d'
+	), $atts));
+		
+	$t = $GLOBALS['tab_count'];
+	$GLOBALS['tabs'][$t] = array( 'title' => sprintf( $title, $GLOBALS['tab_count'] ), 'content' =>  $content );
+	
+	$GLOBALS['tab_count']++;
+	}
 
 ?>
