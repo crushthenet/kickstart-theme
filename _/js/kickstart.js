@@ -262,6 +262,17 @@ jQuery(document).ready(function($){
 	});
 	
 	/*---------------------------------
+		Toggle
+	-----------------------------------*/
+	// Toggle Slides
+	$(".toggle_container").hide();
+	$("p.trigger").click(function(){
+	$(this).toggleClass("active").next().slideToggle("normal");
+	return false;
+	});
+
+	
+	/*---------------------------------
 		Image Style Helpers
 	-----------------------------------*/
 	$('img.style1, img.style2, img.style3').each(function(){

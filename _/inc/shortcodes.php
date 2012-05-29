@@ -91,7 +91,8 @@
 
 	add_shortcode('button', 'button');
 	
-	add_shortcode( 'tabgroup', 'tab_group' );
+	// Tabs
+	
 	function tab_group( $atts, $content ){
 	$GLOBALS['tab_count'] = 0;
 	
@@ -106,8 +107,8 @@
 	}
 	return $return;
 	}
+	add_shortcode( 'tabgroup', 'tab_group' );
 	
-	add_shortcode( 'tab', 'tabs' );
 	function tabs( $atts, $content ){
 	extract(shortcode_atts(array(
 	'title' => 'Tab %d'
@@ -118,5 +119,22 @@
 	
 	$GLOBALS['tab_count']++;
 	}
+	add_shortcode( 'tab', 'tabs' );
+	
+	// Toggle
+	function toggle_acc( $atts, $content = null ) {
+	extract(shortcode_atts(array(
+	'title' => '',
+	'style' => 'list'
+	    ), $atts));
+	output;
+	$output .= '<div class="'.$style.'"><p class="trigger"><a href="#">' .$title. '</a></p>';
+	$output .= '<div class="toggle_container"><div class="block">';
+	$output .= do_shortcode($content);
+	$output .= '</div></div></div>';
+	
+	return $output;
+	}
+	add_shortcode('toggle', 'toggle_acc');
 
 ?>
