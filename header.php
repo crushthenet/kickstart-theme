@@ -104,7 +104,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-	
+<div class="grid">	
 	<div id="page-wrap" class="clearfix"> <!-- //page-wrap -->
 		<div class="col_12"><!-- //col_12 -->
 
@@ -113,25 +113,14 @@
 				<h1>
 					<a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a>
 				</h1>
-				
+				<!-- don't show description
 				<div class="description">
-					<?php bloginfo('description'); ?>
-				</div>
+					<?php // bloginfo('description'); ?>
+				</div> -->
 				
 				<nav id="access" role="navigation">
 
-					<div class="skip-link">
-						<a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to primary content', 'kickstart-theme' ); ?>">
-							<?php _e( 'Skip to primary content', 'kickstart-theme' ); ?>
-						</a>
-					</div>
-					
-					<div class="skip-link">
-						<a class="assistive-text" href="#secondary" title="<?php esc_attr_e( 'Skip to secondary content', 'kickstart-theme' ); ?>">
-							<?php _e( 'Skip to secondary content', 'kickstart-theme' ); ?>
-						</a>
-					</div>
-			
+		
 					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 				</nav>
 				

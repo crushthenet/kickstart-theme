@@ -1,4 +1,4 @@
-<div id="sidebar">
+<div id="sidebar" class="col_4">
 
     <?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('Sidebar Widgets')) : else : ?>
     

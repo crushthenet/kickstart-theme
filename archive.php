@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-
+<div class="col_8">
 		<?php if (have_posts()) : ?>
 
  			<?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
@@ -52,7 +52,7 @@
 		<h2>Nothing found</h2>
 
 	<?php endif; ?>
-
+</div>
 <?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

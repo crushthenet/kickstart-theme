@@ -1,10 +1,10 @@
 /*   
-Theme Name: Kickstart-Theme
+Theme Name: Kickstart-Theme-2
 Theme URI: http://codeandpixels.de
 Description: A basic style theme, packed with basic shortcodes.
 Author: Vangelis
 Author URI: http://codeandpixels.de
-Version: 3.3.2
+Version: 4.0
 */
 
 /*
@@ -17,12 +17,17 @@ Version: 3.3.2
 	IMPORTS
 -----------------------------------*/
 @import url(http://fonts.googleapis.com/css?family=Arimo:400,700);
-
+@import url(http://fonts.googleapis.com/css?family=Marck+Script);
+@import url(http://fonts.googleapis.com/css?family=Euphoria+Script);
 /*---------------------------------
 	OVERRIDES
 -----------------------------------*/
 h1,h2,h3,h4,h5,h6{
-font-family: "Trebuchet Ms", arial, verdana, sans-serif;
+font-family: 'Euphoria Script', "Trebuchet Ms", arial, verdana, sans-serif;
+}
+h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{
+	text-decoration: none;
+	color: #BF5930;
 }
 
 thead th,
@@ -52,14 +57,14 @@ font-family: "Trebuchet Ms", arial, verdana, sans-serif;
 body{
 margin:0;
 padding:0;
-color:#000;
+color:#555;
 background:#efefef url(_/css/img/grid.png) repeat center top;
 font:normal 0.9em/150% 'Arimo', "Trebuchet MS", arial, verdana, sans-serif;
 text-shadow: 0px 0px 1px transparent; /* google font pixelation fix */
 }
 
 #page-wrap{
-width:960px;/*960*/
+/*width:960px;960*/
 background:#fff;
 margin:30px auto 30px auto;
 padding:0;
@@ -85,22 +90,40 @@ top:0;
 left:0;
 }
 
-	#link-top{
-	position: absolute;
-	top:10px;
-	right:10px;
-	*right:25px;/*IE 7 ONLY*/
-	left:auto;
-	color:#666;
-	text-decoration:none;
-	display: inline-block;
-	padding:5px 10px;
-	background:#e5e5e5;
-	line-height:100%;
-	-moz-border-radius:3px;
-	-webkit-border-radius:3px;
-	border-radius:3px;
-	}
+#link-top{
+position: absolute;
+top:10px;
+right:10px;
+*right:25px;/*IE 7 ONLY*/
+left:auto;
+color:#666;
+text-decoration:none;
+display: inline-block;
+padding:5px 10px;
+background:#e5e5e5;
+line-height:100%;
+-moz-border-radius:3px;
+-webkit-border-radius:3px;
+border-radius:3px;
+}
+	
+	/* updated for wordpress, trying to keep our of KS core files */
+	
+.menu li.current-menu-item>a,
+.menu li.current-menu-item>a:hover,
+.menu li.current-menu-item.hover>a{
+background: rgb(122,188,255); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(122,188,255,1) 0%, rgba(96,171,248,1) 44%, rgba(64,150,238,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(122,188,255,1)), color-stop(44%,rgba(96,171,248,1)), color-stop(100%,rgba(64,150,238,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(122,188,255,1) 0%,rgba(96,171,248,1) 44%,rgba(64,150,238,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(122,188,255,1) 0%,rgba(96,171,248,1) 44%,rgba(64,150,238,1) 100%); /* Opera11.10+ */
+
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7abcff', endColorstr='#4096ee',GradientType=0 ); /* IE6-9 */
+background: linear-gradient(top, rgba(122,188,255,1) 0%,rgba(96,171,248,1) 44%,rgba(64,150,238,1) 100%); /* W3C */
+color:#fff;
+text-shadow:0px -1px 0 rgba(0,0,0,0.2);
+cursor: default;
+}
 
 
 
